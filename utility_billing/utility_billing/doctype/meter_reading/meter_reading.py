@@ -63,6 +63,7 @@ def create_sales_order(meter_reading):
         {
             "doctype": "Sales Order",
             "customer": meter_reading.customer,
+            "company": meter_reading.company,
             "meter_readings": [],
             "items": [],
             "warehouse": "Fertigerzeugnisse - SON",
