@@ -11,7 +11,7 @@
   "stock_uom",
   "column_break_fkvl",
   "meter_number",
-  "delivery_warehouse",
+  "warehouse",
   "uom",
   "column_break_smgb",
   "current_reading",
@@ -114,7 +114,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "delivery_warehouse",
+   "fieldname": "warehouse",
    "fieldtype": "Link",
    "label": "Delivery Warehouse",
    "options": "Warehouse"

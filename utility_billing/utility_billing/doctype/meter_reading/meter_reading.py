@@ -65,6 +65,7 @@ def create_sales_order(meter_reading):
             "customer": meter_reading.customer,
             "meter_readings": [],
             "items": [],
+            "warehouse": "Fertigerzeugnisse - SON",
             "order_type": "Sales",
             "selling_price_list": meter_reading.price_list,
         }
@@ -81,12 +82,15 @@ def create_sales_order(meter_reading):
             setattr(sales_order, field, getattr(meter_reading, field))
 
     for rate in meter_reading.rates:
+        print(rate.as_dict())
         rate_dict = rate.as_dict()
         rate_dict["delivery_date"] = nowdate()
         rate_dict["meter_reading"] = meter_reading.name
+        rate_dict["warehouse"] = "Fertigerzeugnisse - SON"
         sales_order.append("items", rate_dict)
 
     for i in meter_reading.items:
+        print(i.as_dict())
         prev_reading = get_previous_invoice_reading(
             i.item_code, meter_reading.customer, i.meter_number
         )
@@ -97,6 +101,8 @@ def create_sales_order(meter_reading):
                 "meter_number": i.meter_number,
                 "meter_reading": meter_reading.name,
                 "uom": i.uom,
+                "warehouse": "Fertigerzeugnisse - SON",
+                "target_warehouse": "Fertigerzeugnisse - SON",
                 "stock_uom": i.stock_uom,
                 "qty": 1,
                 "current_reading": i.current_reading,

@@ -36,11 +36,13 @@ def insert_meter_readings() -> None:
         doc.set("items", [])
         
         for item in entry.get("items", []):
+            print(item)
             doc.append("items", {
                 "item_code": item["item_code"],
                 "current_reading": item["current_reading"],
                 "previous_reading": item["previous_reading"],
                 "consumption": item["consumption"],
+                "warehouse": "Fertigerzeugnisse - SON",
                 "meter_number": item["meter_number"]
             })
 
