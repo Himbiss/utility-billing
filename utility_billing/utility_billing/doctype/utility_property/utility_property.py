@@ -62,6 +62,7 @@ class UtilityProperty(NestedSet):
                     "naming_series": self.asset_naming_series or "ACC-ASS-.YYYY.-",
                     "is_existing_asset": 1,
                     "net_purchase_amount": self.net_purchase_amount, 
+                    "gross_purchase_amount": self.gross_purchase_amount,
                     "purchase_date": self.purchase_date, 
                     "location": self.location
                 })

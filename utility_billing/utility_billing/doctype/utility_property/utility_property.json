@@ -23,6 +23,7 @@
     "asset_category",
     "purchase_date",
     "net_purchase_amount",
+    "gross_purchase_amount",
     "other_info_section",
     "legal_description",
     "section_break_nbga",
@@ -233,6 +234,13 @@
     {
       "fieldname": "column_break_sakg",
       "fieldtype": "Column Break"
+    },
+    {
+      "depends_on": "eval: doc.is_fixed_asset == 1",
+      "fieldname": "gross_purchase_amount",
+      "fieldtype": "Currency",
+      "label": "Gross Purchase Amount",
+      "mandatory_depends_on": "eval: (doc.is_fixed_asset == 1) && (!doc.item)"
     },
     {
       "depends_on": "eval: doc.is_fixed_asset == 1",
