@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-29 18:02:47.783852",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "kunde",
+  "vertrag",
+  "immobilienanfrage"
+ ],
+ "fields": [
+  {
+   "fieldname": "kunde",
+   "fieldtype": "Link",
+   "label": "Kunde",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "vertrag",
+   "fieldtype": "Link",
+   "label": "Vertrag",
+   "options": "Contract"
+  },
+  {
+   "fieldname": "immobilienanfrage",
+   "fieldtype": "Link",
+   "label": "Immobilienanfrage",
+   "options": "Utility Service Request"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-29 18:06:34.904898",
+ "modified_by": "Administrator",
+ "module": "Utility Billing",
+ "name": "LeaseParty",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

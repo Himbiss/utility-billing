@@ -66,7 +66,7 @@ def create_sales_order(meter_reading):
             "company": meter_reading.company,
             "meter_readings": [],
             "items": [],
-            "warehouse": "Fertigerzeugnisse - SON",
+            "warehouse": "Fertigerzeugnisse - RS",
             "order_type": "Sales",
             "selling_price_list": meter_reading.price_list,
         }
@@ -87,7 +87,7 @@ def create_sales_order(meter_reading):
         rate_dict = rate.as_dict()
         rate_dict["delivery_date"] = nowdate()
         rate_dict["meter_reading"] = meter_reading.name
-        rate_dict["warehouse"] = "Fertigerzeugnisse - SON"
+        rate_dict["warehouse"] = "Fertigerzeugnisse - RS"
         sales_order.append("items", rate_dict)
 
     for i in meter_reading.items:
@@ -102,8 +102,8 @@ def create_sales_order(meter_reading):
                 "meter_number": i.meter_number,
                 "meter_reading": meter_reading.name,
                 "uom": i.uom,
-                "warehouse": "Fertigerzeugnisse - SON",
-                "target_warehouse": "Fertigerzeugnisse - SON",
+                "warehouse": "Fertigerzeugnisse - RS",
+                "target_warehouse": "Fertigerzeugnisse - RS",
                 "stock_uom": i.stock_uom,
                 "qty": 1,
                 "current_reading": i.current_reading,
